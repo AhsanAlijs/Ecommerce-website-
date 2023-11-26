@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration|Form</title>
+    <link rel="stylesheet" href="./dist/style.css">
+</head>
+
+<body>
+    <div class="main-web">
+        <!-- nav-start -->
+        <div class="navbar bg-[white] text-[black] border-b-2">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul
+                        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-[#1d1c1c] rounded-box w-52 text-[white]">
+                        <li class="text-[20px] font-semibold"><a>Home</a></li>
+                        <li class="text-[20px] font-semibold"><a>About</a></li>
+                        <li class="text-[20px] font-semibold"><a>Contact</a></li>
+                </div>
+
+                <a class="text-xl font-extrabold">Exclusive</a>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1">
+                    <li class="text-[20px] font-semibold"><a>Home</a></li>
+                    <li class="text-[20px] font-semibold"><a>About</a></li>
+                    <li class="text-[20px] font-semibold"><a>Contact</a></li>
+                </ul>
+            </div>
+            <div class="navbar-end">
+                <a class="text-lg font-semibold hover:text-[gray] cursor-pointer">Login</a>
+            </div>
+        </div>
+        <!-- nav-end -->
+        <!-- register form start -->
+        <div class="flex items-center justify-evenly flex-wrap  bg-[white] h-[auto]">
+
+            <div class="right">
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.heritagechristiancollege.com%2Fwp-content%2Fuploads%2F2019%2F05%2Ft-shirt-website-template-free-download-of-26-free-t-shirt-mockups-for-clothing-brands-amp-print-shops-of-t-shirt-website-template-free-download.jpg&f=1&nofb=1&ipt=f6279f0445241296b98d9ac1c32cad5003162be2a285b89ef250249a927e985b&ipo=images"
+                    alt="banner"
+                    class="lg:w-[700px] lg:h-[650px] md:w-[700px] md:h-[700px] rounded-[30px] scale-75 translate-x-4 skew-x-2 shadow shadow-blue-500/40 hover:shadow-green-500/40 md:shadow-xl">
+            </div>
+
+            <div
+                class="bg-[#e6e6e6] p-[50px] rounded-[20px] shadow shadow-blue-500/40 hover:shadow-green-500/40 md:shadow-xl  min-[500px]:w-[auto] min-[400px]:w-[100%] min-[380px]:w-[100%] min-[300px]:w-[100%] min-[280px]:w-[100%] ">
+                <form id="form " class="text-[#ffff] flex items-center flex-col gap-3 ">
+                    <div class="">
+                        <p class="text-2xl text-[black] ">Create an account</p>
+                        <p class="text-lg text-[black]">Enter your details</p>
+                    </div>
+                    <input type="text" placeholder="Name"
+                        class="input input-bordered input-error w-[600px] max-w-xs border-b-4 bg-transparent text-black font-semibold placeholder:text-[black] lg:w-[600px] md:w-[450px] sm:w-[450px] min-[200px]:w-[auto]"
+                        required>
+                    <input type="email" placeholder="Email" id="email" required
+                        class="input input-bordered input-error w-[600px] max-w-xs border-b-4 bg-transparent text-black font-semibold placeholder:text-[black] lg:w-[600px] md:w-[450px] sm:w-[450px] min-[200px]:w-[auto]">
+                    <input type="password" placeholder="Password" id="password" required
+                        class="input input-bordered input-error w-[600px] max-w-xs border-b-4 bg-transparent text-black font-semibold placeholder:text-[black] lg:w-[600px] md:w-[450px] sm:w-[450px] min-[200px]:w-[auto]">
+
+                    <input type="submit" value="Register" class="btn">
+                </form>
+            </div>
+
+        </div>
+        <!-- register form end -->
+    </div>
+</body>
+
+</html>
