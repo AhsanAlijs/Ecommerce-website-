@@ -4,75 +4,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration|Form</title>
-    <link rel="stylesheet" href="./dist/style.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="./dist/output.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.24/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="main-web">
-        <!-- nav-start -->
-        <div class="navbar bg-[white] text-[black] border-b-2">
-            <div class="navbar-start">
-                <div class="dropdown">
-                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h8m-8 6h16" />
-                        </svg>
-                    </div>
-                    <ul
-                        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-[#1d1c1c] rounded-box w-52 text-[white]">
-                        <li class="text-[20px] font-semibold"><a>Home</a></li>
-                        <li class="text-[20px] font-semibold"><a>About</a></li>
-                        <li class="text-[20px] font-semibold"><a>Contact</a></li>
-                </div>
 
-                <a class="text-xl font-extrabold">Exclusive</a>
-            </div>
-            <div class="navbar-center hidden lg:flex">
-                <ul class="menu menu-horizontal px-1">
-                    <li class="text-[20px] font-semibold"><a>Home</a></li>
-                    <li class="text-[20px] font-semibold"><a>About</a></li>
-                    <li class="text-[20px] font-semibold"><a>Contact</a></li>
+    <div class="main">
+
+        <div class="navbar flex items-center justify-around p-[0] bg-[#ffffffdf] text-[#000]">
+            <header>
+                <a href="./index.html"><img src="./assets/logo.png" class="w-[80px]"></a>
+            </header>
+            <nav class="nav-list">
+                <ul class="menu-ul flex items-center justify-center gap-[70px] text-[18px] font-[500] nav-ul">
+                    <li><a href="#" class="hover:underline hover:transition-all">Home</a></li>
+                    <li><a href="#" class="hover:underline hover:transition-all">Product</a></li>
+                    <li><a href="#" class="hover:underline hover:transition-all">Categories</a></li>
+                    <li><a href="#" class="hover:underline hover:transition-all">Man</a></li>
                 </ul>
-            </div>
-            <div class="navbar-end">
-                <a class="text-lg font-semibold hover:text-[gray] cursor-pointer">Login</a>
-            </div>
-        </div>
-        <!-- nav-end -->
-        <!-- register form start -->
-        <div class="flex items-center justify-evenly flex-wrap  bg-[white] h-[auto]">
+            </nav>
 
-            <div class="right">
-                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.heritagechristiancollege.com%2Fwp-content%2Fuploads%2F2019%2F05%2Ft-shirt-website-template-free-download-of-26-free-t-shirt-mockups-for-clothing-brands-amp-print-shops-of-t-shirt-website-template-free-download.jpg&f=1&nofb=1&ipt=f6279f0445241296b98d9ac1c32cad5003162be2a285b89ef250249a927e985b&ipo=images"
-                    alt="banner"
-                    class="lg:w-[700px] lg:h-[650px] md:w-[700px] md:h-[700px] rounded-[30px] scale-75 translate-x-4 skew-x-2 shadow shadow-blue-500/40 hover:shadow-green-500/40 md:shadow-xl">
-            </div>
+            <div class="user-cart flex items-center justify-center gap-[50px]">
+                <div class="cart">
+                    <i class="fa-solid fa-cart-shopping text-2xl cursor-pointer"></i>
+                </div>
+                <div class="user">
+                    <div class="dropdown dropdown-end mt-">
+                        <div tabindex="0" role="button" class=" rounded-btn"><i
+                                class="fa-regular fa-circle-user text-2xl cursor-pointer"></i></div>
+                        <ul tabindex="0"
+                            class="dropdown-content z-[0] menu p-5 shadow bg-[#ffffff] rounded-box text-[black] mt-[30px] w-[150px] down">
+                            <!-- Open the modal using ID.showModal() method -->
+                            <li><button id="icon" onclick="my_modal_5.showModal()"
+                                    class="hover:bg-[lightgray] text-xl font-bold">Register</button></li>
+                            <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                                <div class="modal-box bg-white">
+                                    <div class="flex items-center justify-between pb-1">
+                                        <h3 class="font-bold text-lg">Register User</h3>
+                                        <form method="dialog" class="mt-3">
+                                            <button class="rounded-lg"><i
+                                                    class="fa-regular fa-circle-xmark text-[30px] hover:bg-[red] hover:text-[white] rounded-[30px]"></i></button>
+                                        </form>
+                                    </div>
+                                    <!-- modal 1 -->
+                                    <p class="pb-[2px] mb-[20px]">Well come to my City Shop App</p>
+                                    <div class="bg-[#fff] w-[100%]">
+                                        <form id="form" class="flex items-center justify-center flex-col gap-3 ">
+                                            <!-- f-name -->
+                                            <input type="text" minlength="3" maxlength="20" placeholder="First Name"
+                                                required id="fname"
+                                                class="border-2 border-[gray] outline-none bg-transparent w-[100%] py-1 pl-[5px] text-lg rounded-[5px]">
+                                            <!-- fname end -->
+                                            <!-- l name start -->
+                                            <input type="text" minlength="3" maxlength="20" placeholder="First Name"
+                                                required id="lname"
+                                                class="border-2 border-[gray] outline-none bg-transparent w-[100%] py-1 pl-[5px] text-lg rounded-[5px]">
+                                            <!-- L name end -->
 
-            <div
-                class="bg-[#e6e6e6] p-[50px] rounded-[20px] shadow shadow-blue-500/40 hover:shadow-green-500/40 md:shadow-xl  min-[500px]:w-[auto] min-[400px]:w-[100%] min-[380px]:w-[100%] min-[300px]:w-[100%] min-[280px]:w-[100%] ">
-                <form id="form " class="text-[#ffff] flex items-center flex-col gap-3 ">
-                    <div class="">
-                        <p class="text-2xl text-[black] ">Create an account</p>
-                        <p class="text-lg text-[black]">Enter your details</p>
+                                            <input type="email" id="email" placeholder="Email" required
+                                                class="border-2 border-[gray] outline-none bg-transparent w-[100%] py-1 pl-[5px] text-lg rounded-[5px]">
+
+                                            <input type="password" id="password" placeholder="Password"
+                                                class="border-2 border-[gray] outline-none bg-transparent w-[100%] py-1 pl-[5px] text-lg rounded-[5px]"
+                                                pattern="(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                                            <input type="password" id="re-password" placeholder="Re Type Password"
+                                                required
+                                                class="border-2 border-[gray] outline-none bg-transparent w-[100%] py-1 pl-[5px] text-lg rounded-[5px]">
+                                            <input type="file"
+                                                class="file-input file-input-bordered file-input-sm w-[100%] text-[#fff]"
+                                                required>
+
+                                            <button class="w-[100%] btn text-[#000] hover:text-[#fff]"
+                                                type="submit">Register</button>
+                                        </form>
+                                        <!-- modal 1 -->
+                                    </div>
+                                </div>
+                            </dialog>
+                            </li>
+
+                            <li class="">
+                            <li><button class="text-xl font-bold" onclick="my_modal_6.showModal()">Login</button></li>
+                            <dialog id="my_modal_6" class="modal modal-bottom sm:modal-middle">
+                                <div class="modal-box bg-white">
+                                    <div class="flex items-center justify-between pb-1">
+                                        <h3 class="font-bold text-lg">Login User</h3>
+                                        <form method="dialog" class="mt-3">
+                                            <button class="rounded-lg"><i
+                                                    class="fa-regular fa-circle-xmark text-[30px] hover:bg-[red] hover:text-[white] rounded-[30px]"></i></button>
+                                        </form>
+                                    </div>
+
+                                    <!-- modal 2-->
+                                    <div class="modal2">
+                                        <p class="pb-[2px] mb-[10px]">Login my City Shop</p>
+                                        <div class="">
+                                            <form id="form" class="flex items-center justify-center flex-col gap-3 ">
+                                                <input type="email" id="email" placeholder="Email" required
+                                                    class="border-2 border-[gray] outline-none bg-transparent w-[100%] py-1 pl-[5px] text-lg rounded-[5px]">
+
+                                                <input type="password" id="password" placeholder="Password" required
+                                                    class="border-2 border-[gray] outline-none bg-transparent w-[100%] py-1 pl-[5px] text-lg rounded-[5px]">
+                                                <button class="btn w-[100%] btn text-[#000] hover:text-[#fff] text-lg"
+                                                    type="submit">Login</button>
+                                            </form>
+                                            <!-- modal 2 -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </dialog>
+                            </li>
+
+
+
+                        </ul>
                     </div>
-                    <input type="text" placeholder="Name"
-                        class="input input-bordered input-error w-[600px] max-w-xs border-b-4 bg-transparent text-black font-semibold placeholder:text-[black] lg:w-[600px] md:w-[450px] sm:w-[450px] min-[200px]:w-[auto]"
-                        required>
-                    <input type="email" placeholder="Email" id="email" required
-                        class="input input-bordered input-error w-[600px] max-w-xs border-b-4 bg-transparent text-black font-semibold placeholder:text-[black] lg:w-[600px] md:w-[450px] sm:w-[450px] min-[200px]:w-[auto]">
-                    <input type="password" placeholder="Password" id="password" required
-                        class="input input-bordered input-error w-[600px] max-w-xs border-b-4 bg-transparent text-black font-semibold placeholder:text-[black] lg:w-[600px] md:w-[450px] sm:w-[450px] min-[200px]:w-[auto]">
-
-                    <input type="submit" value="Register" class="btn">
-                </form>
+                </div>
             </div>
-
+            <div class="burger icon">
+                <i class="fa-solid fa-bars text-xl cursor-pointer" id="bar"></i>
+            </div>
         </div>
-        <!-- register form end -->
     </div>
+
+
+
+
+
+    </div>
+    <!-- daysI ui start -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- daysI ui End -->
+    <!-- font Kit Start -->
+    <script src="https://kit.fontawesome.com/5562aae272.js" crossorigin="anonymous"></script>
+    <!-- font Kit End -->
+    <script src="app.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,44 @@
+.icon {
+    display: none;
+}
+
+@media (max-width:600px) {
+    .nav-list {
+        display: none;
+    }
+
+    .icon {
+        display: block;
+    }
+
+    .showData,
+    .menu-ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: px;
+        position: absolute;
+        top: 40px;
+        background-color: #4b5963;
+        width: 100%;
+        left: 0;
+        right: 0;
+        color: aliceblue;
+
+    }
+.down{
+    margin-top: 40px;
+    font-size: larger;
+    font-weight: 500;
+}
+
+.modal2{
+    margin-bottom: 50px;
+}
+#bar{
+    cursor: pointer;
+    font-size: larger;
+}
+
+
+}
