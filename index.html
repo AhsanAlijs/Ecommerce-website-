@@ -75,7 +75,7 @@
                                                 class="border-2 border-[gray] outline-none bg-transparent w-[100%] py-1 pl-[5px] text-lg rounded-[5px]">
                                             <input type="file"
                                                 class="file-input file-input-bordered file-input-sm w-[100%] text-[#fff]"
-                                                required>
+                                                required id="upload-photo">
 
                                             <button class="w-[100%] btn text-[#000] hover:text-[#fff]"
                                                 type="submit">Register</button>
@@ -102,11 +102,11 @@
                                     <div class="modal2">
                                         <p class="pb-[2px] mb-[10px]">Login my City Shop</p>
                                         <div class="">
-                                            <form id="form" class="flex items-center justify-center flex-col gap-3 ">
-                                                <input type="email" id="email" placeholder="Email" required
+                                            <form id="forms" class="flex items-center justify-center flex-col gap-3 ">
+                                                <input type="email" id="emails" placeholder="Email" required
                                                     class="border-2 border-[gray] outline-none bg-transparent w-[100%] py-1 pl-[5px] text-lg rounded-[5px]">
 
-                                                <input type="password" id="password" placeholder="Password" required
+                                                <input type="password" id="passwords" placeholder="Password" required
                                                     class="border-2 border-[gray] outline-none bg-transparent w-[100%] py-1 pl-[5px] text-lg rounded-[5px]">
                                                 <button class="btn w-[100%] btn text-[#000] hover:text-[#fff] text-lg"
                                                     type="submit">Login</button>
@@ -141,7 +141,8 @@
     <!-- font Kit Start -->
     <script src="https://kit.fontawesome.com/5562aae272.js" crossorigin="anonymous"></script>
     <!-- font Kit End -->
-    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="app.js"></script>
 </body>
 
 </html>
