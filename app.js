@@ -8,31 +8,39 @@ const lname = document.querySelector('#lname');
 const email = document.querySelector('#email');
 const password = document.querySelector('#password');
 const repassword = document.querySelector('#re-password');
-const uploadPhoto = document.querySelector('#upload-photo')
-const icons = document.querySelector('#icon')
+const uploadPhoto = document.querySelector('#upload-photo');
+const icons = document.querySelector('#icon');
+
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     const userName = `${fname.value} ${lname.value}`
-
     try {
         if (password.value !== repassword.value) {
             Swal.fire({
-                icon: "error",
-                title: "Oops...",
-                text: "Something went wrong!",
-                footer: '<a href="#">Why do I have this issue?</a>'
-                
-              });
-            
+                position: "top-end",
+                icon: "warning",
+                title: `${userName} Password are not same`,
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }else{
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: `${userName} Password are  same`,
+                showConfirmButton: false,
+                timer: 1500
+            });
         }
-        
+
+
     } catch (error) {
         console.log(error);
-    }finally{
+    } finally {
 
     }
-    
+
 })
 
 
