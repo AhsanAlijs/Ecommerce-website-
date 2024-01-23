@@ -1,5 +1,4 @@
 import React from 'react'
-
 const Card = ({ image, title, description, price, index }) => {
 
 
