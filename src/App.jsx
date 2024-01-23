@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Card from './components/card/Card'
+import Navbar from './components/navbar/Navbar'
 
 const App = () => {
   const [data, setData] = useState([])
@@ -15,14 +16,15 @@ const App = () => {
   }, [])
   return (
     <>
+      <Navbar />
       {data.length > 0 ? (
-        <div className='flex  justify-evenly flex-wrap gap-[10px] mt-[50px]'>
+        <div className='flex  justify-evenly flex-wrap gap-[10px]  bg-[#fff]'>
           {data.map((item, index) => (
-            <Card key={index} title={item.title} image={item.images} description={item.description} price={item.price} />
+            <Card key={index} title={item.title} image={item.images} description={item.description} price={item.price} index={index} />
           ))}
         </div>
       ) : (
-        <h1>Loading..</h1>
+        <h1 className='text-center text-[#000] font-semibold'>Loading..</h1>
       )}
 
     </>
