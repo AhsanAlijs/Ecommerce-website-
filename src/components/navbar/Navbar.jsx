@@ -13,7 +13,7 @@ const Navbar = () => {
                 </div>
                 <div>
                     <ul className='flex items-center justify-center gap-[40px]'>
-                        <li><Link to={'/'} className='text-lg text-[#000] font-bold'>Home</Link></li>
+                        <li><Link to={'/'} className='text-lg text-[#000] font-bold'>All Products</Link></li>
                         <li><Link to={'/clothes'} className='text-lg text-[#000] font-bold'>Clothes</Link></li>
                         <li><Link to={'/electronics'} className='text-lg text-[#000] font-bold'>Electronics</Link></li>
                         <li><Link to={'/furniture'} className='text-lg text-[#000] font-bold'>Furniture</Link></li>

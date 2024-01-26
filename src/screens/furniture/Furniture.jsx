@@ -8,7 +8,7 @@ const Furniture = () => {
     useEffect(() => {
         axios.get('https://api.escuelajs.co/api/v1/categories/3/products')
             .then((res) => {
-                console.log(res.data);
+                // console.log(res.data);
                 setClothes(res.data)
             }).catch((err) => {
                 console.log(err);
