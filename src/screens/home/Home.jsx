@@ -18,7 +18,7 @@ const Home = () => {
             {data.length > 0 ? (
                 <div className='flex  justify-evenly flex-wrap gap-[10px]  bg-[#fff]'>
                     {data.map((item, index) => (
-                        <Card key={index} title={item.title} image={item.images} description={item.description} price={item.price} index={index} data={data} />
+                        <Card key={index} title={item.title} image={item.images} description={`${item.description.slice(0,50)}....`} price={item.price} index={index} data={data} />
                     ))}
                 </div>
             ) : (
