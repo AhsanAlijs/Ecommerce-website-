@@ -3,6 +3,10 @@ import image from '../../assets/logo/02.png'
 import { Link } from 'react-router-dom'
 
 const Navbar = () => {
+
+
+
+
     return (
         <>
             <div className=" flex items-center justify-between bg-[#ebe9e9] mb-[20px]">
@@ -41,6 +45,9 @@ const Navbar = () => {
 
                         </div>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-[#000] text-[#fff] rounded-box w-52">
+                            <li><Link to={'/register'}>Register</Link></li>
+                            <li><Link to={'/login'}>Login</Link></li>
+                            
                             <li><a>Logout</a></li>
                         </ul>
                     </div>

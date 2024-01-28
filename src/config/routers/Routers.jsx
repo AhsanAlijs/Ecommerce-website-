@@ -7,17 +7,22 @@ import Electronics from '../../screens/electronics/Electronics'
 import Furniture from '../../screens/furniture/Furniture'
 import Miscellaneous from '../../screens/miscellaneous/Miscellaneous'
 import Shoes from '../../screens/shoes/Shoes'
+import ProtectedRoutes from './protectedRoutes/ProtectedRoutes'
+import Register from '../../screens/register/Register'
+import Login from '../../screens/login/Login'
 const Routers = () => {
     return (
         <BrowserRouter>
             <Navbar />
             <Routes>
-                <Route path='/' element={<Home />} />
-                <Route path='/clothes' element={<Clothes />} />
-                <Route path='/electronics' element={<Electronics />} />
-                <Route path='/furniture' element={<Furniture />} />
-                <Route path='/miscellaneous' element={<Miscellaneous />} />
-                <Route path='/shoes' element={<Shoes />} />
+                <Route path='/' element={<ProtectedRoutes component={<Home />} />} />
+                <Route path='/clothes' element={<ProtectedRoutes component={<Clothes />} />} />
+                <Route path='/electronics' element={<ProtectedRoutes component={<Electronics />} />} />
+                <Route path='/furniture' element={<ProtectedRoutes component={<Furniture />} />} />
+                <Route path='/miscellaneous' element={<ProtectedRoutes component={<Miscellaneous />} />} />
+                <Route path='/shoes' element={<ProtectedRoutes component={<Shoes />} />} />
+                <Route path='/register' element={<Register />} />
+                <Route path='/login' element={<Login />} />
             </Routes>
         </BrowserRouter>
     )
