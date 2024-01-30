@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import {
   Card,
   Input,
@@ -7,12 +7,15 @@ import {
   Typography,
 } from "@material-tailwind/react";
 import { useNavigate } from 'react-router-dom';
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../../config/firebase/firebaseConfig';
 
 const Register = () => {
 
 
   const navigate = useNavigate()
 
+  const [chack, setChack] = useState(false)
 
   function navigates() {
     navigate('/login')
@@ -20,15 +23,41 @@ const Register = () => {
 
   const names = useRef()
   const email = useRef()
-  const Password = useRef()
+  const password = useRef()
 
   const registerUser = (event) => {
     event.preventDefault()
-    console.log(names.current.value);
-    console.log(email.current.value);
-    console.log(Password.current.value);
+    {
+
+
+      chack === true
+        ? (
+          createUserWithEmailAndPassword(auth , email.current.value, password.current.value)
+            .then((userCredential) => {
+              const user = userCredential.user;
+              console.log(names.current.value),
+                console.log(email.current.value),
+                console.log(password.current.value)
+                console.log(user);
+                navigate('/login')
+            })
+            .catch((error) => {
+              const errorCode = error.code;
+              const errorMessage = error.message;
+              console.log(errorMessage);
+            })
+
+        )
+        : console.log("Loading...");
+    }
+
 
   }
+
+  const handleToggle = (e) => {
+    setChack(e.target.checked)
+    console.log(chack);
+  };
 
 
 
@@ -80,9 +109,10 @@ const Register = () => {
               labelProps={{
                 className: "before:content-none after:content-none",
               }}
-              inputRef={Password} />
+              inputRef={password} />
           </div>
           <Checkbox
+            onChange={handleToggle}
             label={
               <Typography
                 variant="small"
