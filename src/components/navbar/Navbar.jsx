@@ -3,38 +3,26 @@ import image from '../../assets/logo/02.png'
 import { Link } from 'react-router-dom'
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from '../../config/firebase/firebaseConfig';
-
 const Navbar = () => {
-
     const [hide, setHide] = useState(false)
-
-
     onAuthStateChanged(auth, (user) => {
         if (user) {
             const uid = user.uid;
             console.log(uid);
             setHide(true)
-
-
         } else {
             // User is signed out
             setHide(false)
             // ...
         }
     });
-
-
-
     function logOut() {
         signOut(auth).then(() => {
             console.log('log out hogaya');
         }).catch((error) => {
             console.log(error);
         });
-
     }
-
-
     return (
         <>
             <div className=" flex items-center justify-between bg-[#ebe9e9] mb-[20px]">
@@ -82,7 +70,6 @@ const Navbar = () => {
                                 : <>
                                     <li><a onClick={logOut}>Logout</a></li>
                                 </>}
-
                         </ul>
                     </div>
                 </div>
