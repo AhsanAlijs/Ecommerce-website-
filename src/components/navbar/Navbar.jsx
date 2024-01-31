@@ -1,10 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react'
 import image from '../../assets/logo/02.png'
 import { Link } from 'react-router-dom'
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { auth } from '../../config/firebase/firebaseConfig';
 
 const Navbar = () => {
 
+    const [hide, setHide] = useState(false)
 
+
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            const uid = user.uid;
+            console.log(uid);
+            setHide(true)
+
+
+        } else {
+            // User is signed out
+            setHide(false)
+            // ...
+        }
+    });
+
+
+
+    function logOut() {
+        signOut(auth).then(() => {
+            console.log('log out hogaya');
+        }).catch((error) => {
+            console.log(error);
+        });
+
+    }
 
 
     return (
@@ -45,9 +73,16 @@ const Navbar = () => {
 
                         </div>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-[#000] text-[#fff] rounded-box w-52">
-                            <li><Link to={'/register'}>Register</Link></li>
-                            <li><Link to={'/login'}>Login</Link></li>
-                            <li><a>Logout</a></li>
+                            {hide === false ?
+                                <div>
+                                    <li><Link to={'/register'}>Register</Link></li>
+                                    <li><Link to={'/login'}>Login</Link></li>
+
+                                </div>
+                                : <>
+                                    <li><a onClick={logOut}>Logout</a></li>
+                                </>}
+
                         </ul>
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import {
     Card,
     Input,
@@ -7,22 +7,45 @@ import {
     Typography,
 } from "@material-tailwind/react";
 import { useNavigate } from 'react-router-dom';
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../../config/firebase/firebaseConfig';
 
 const Login = () => {
 
 
     const navigate = useNavigate()
 
+    const [chack, setChack] = useState(false)
+
     const email = useRef()
     const password = useRef()
 
 
-    const login = (e)=>{
-        e.preventDefault()
-        console.log(email.current.value);
-        console.log(password.current.value);
+    const login = (e) => {
+        e.preventDefault();
 
-    }
+        chack === true
+            ? signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+                .then((userCredential) => {
+                    // Signed in 
+                    const user = userCredential.user;
+                    console.log(user);
+                    navigate('/')
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    console.log(errorMessage);
+                })
+            : console.log('loading..');
+    };
+
+
+
+    const handleToggle = (e) => {
+        setChack(e.target.checked)
+        console.log(chack);
+    };
 
 
 
@@ -53,7 +76,7 @@ const Login = () => {
                                 labelProps={{
                                     className: "before:content-none after:content-none",
                                 }}
-                            inputRef={email} />
+                                inputRef={email} required />
                             <Typography variant="h6" color="blue-gray" className="-mb-3">
                                 Password
                             </Typography>
@@ -65,7 +88,7 @@ const Login = () => {
                                 labelProps={{
                                     className: "before:content-none after:content-none",
                                 }}
-                            inputRef={password} />
+                                inputRef={password} required />
                         </div>
                         <Checkbox
                             label={
@@ -84,7 +107,7 @@ const Login = () => {
                                 </Typography>
                             }
                             containerProps={{ className: "-ml-2.5" }}
-                        />
+                            onChange={handleToggle} />
                         <Button type='submit' className="mt-6" fullWidth>
                             sign In
                         </Button>
