@@ -23,7 +23,9 @@ const Shoes = () => {
                     ))}
                 </div>
             ) : (
-                <h1 className='text-center text-[#000] font-semibold'>Loading..</h1>
+                <div className='flex items-center justify-center h-[90vmin]'>
+                    <h1 className='text-center text-[#000] bg-[white]  font-semibold'><span className="loading loading-infinity loading-lg text-[#426ea1]"></span></h1>
+                </div>
             )}
         </>
     )
