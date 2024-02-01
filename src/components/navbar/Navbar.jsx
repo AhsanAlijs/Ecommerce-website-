@@ -8,7 +8,7 @@ const Navbar = () => {
     onAuthStateChanged(auth, (user) => {
         if (user) {
             const uid = user.uid;
-            console.log(uid);
+            // console.log(uid);
             setHide(true)
         } else {
             // User is signed out
@@ -23,6 +23,14 @@ const Navbar = () => {
             console.log(error);
         });
     }
+
+
+    const [arry , setArry]=useState(['ali','l' ,'p' , 'p'])
+
+    // console.log(arry.length);
+
+
+
     return (
         <>
             <div className=" flex items-center justify-between bg-[#ebe9e9] mb-[20px]">
@@ -31,7 +39,7 @@ const Navbar = () => {
                     <a className="btn btn-link text-xl"><img src={image} alt="Logo" className='w-[170px] ml-[180px] absolute' /></a>
 
                 </div>
-                <div>
+                <div className='max-w'>
                     {hide === true ? <ul className='flex items-center justify-center gap-[40px]'>
                         <li><Link to={'/'} className='text-lg text-[#000] font-bold'>All Products</Link></li>
                         <li><Link to={'/clothes'} className='text-lg text-[#000] font-bold'>Clothes</Link></li>
@@ -46,8 +54,8 @@ const Navbar = () => {
                     <div className="dropdown dropdown-end text-[#000]">
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
                             <Link to={'/cart'}><div className="indicator">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-                                <span className="badge badge-sm indicator-item">0</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" className=" w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                                <span className=" bg-[#000] text-[white] p-[2px] rounded-full indicator-item">{arry.length}</span>
                             </div></Link>
 
                         </div>
