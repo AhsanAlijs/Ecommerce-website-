@@ -24,20 +24,13 @@ const Navbar = () => {
         });
     }
 
-
-    const [arry , setArry]=useState(['ali','l' ,'p' , 'p'])
-
-    // console.log(arry.length);
-
-
+    const [arry, setArry] = useState(['ali', 'l', 'p', 'p'])
 
     return (
         <>
             <div className=" flex items-center justify-between bg-[#ebe9e9] mb-[20px]">
-
                 <div className="">
                     <a className="btn btn-link text-xl"><img src={image} alt="Logo" className='w-[170px] ml-[180px] absolute' /></a>
-
                 </div>
                 <div className='max-w'>
                     {hide === true ? <ul className='flex items-center justify-center gap-[40px]'>

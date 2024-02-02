@@ -46,23 +46,14 @@ const Register = () => {
               const errorMessage = error.message;
               console.log(errorMessage);
             })
-
         )
         : console.log("Loading...");
     }
-
-
   }
-
   const handleToggle = (e) => {
     setChack(e.target.checked)
     console.log(chack);
   };
-
-
-
-
-
 
   return (
     <div className='flex items-center justify-center mt-[100px] pb-[100px]'>
@@ -84,7 +75,6 @@ const Register = () => {
               className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
               labelProps={{
                 className: "before:content-none after:content-none",
-
               }}
               inputRef={names} />
             <Typography variant="h6" color="blue-gray" className="-mb-3">

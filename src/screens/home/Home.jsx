@@ -14,7 +14,6 @@ const Home = () => {
     }, [])
     return (
         <>
-
             {data.length > 0 ? (
                 <div className='flex  justify-evenly flex-wrap gap-[10px]  bg-[#fff]'>
                     {data.map((item, index) => (
@@ -26,9 +25,7 @@ const Home = () => {
                     <h1 className='text-center text-[#000] bg-[white]  font-semibold'><span className="loading loading-infinity loading-lg text-[#426ea1]"></span></h1>
                 </div>
             )}
-
         </>
     )
 }
-
 export default Home

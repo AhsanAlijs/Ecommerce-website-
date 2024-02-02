@@ -4,7 +4,6 @@ import axios from 'axios';
 
 const Shoes = () => {
     const [clothes, setClothes] = useState([]);
-
     useEffect(() => {
         axios.get('https://api.escuelajs.co/api/v1/categories/4/products')
             .then((res) => {
