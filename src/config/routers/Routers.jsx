@@ -11,6 +11,7 @@ import ProtectedRoutes from './protectedRoutes/ProtectedRoutes'
 import Register from '../../screens/register/Register'
 import Login from '../../screens/login/Login'
 import Cart from '../../screens/cart/cart'
+import { FooterWithSitemap } from '../../components/footer/Footer'
 const Routers = () => {
     return (
         <BrowserRouter>
@@ -26,6 +27,7 @@ const Routers = () => {
                 <Route path='/register' element={<Register />} />
                 <Route path='/login' element={<Login />} />
             </Routes>
+            <FooterWithSitemap />
         </BrowserRouter>
     )
 }

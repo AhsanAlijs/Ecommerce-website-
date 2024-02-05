@@ -4,13 +4,13 @@ import Card from '../../components/card/Card';
 
 const Clothes = () => {
 
-    const [clothes, setClothes] = useState([]);
+    const [data, setData] = useState([])
 
     useEffect(() => {
         axios.get('https://api.escuelajs.co/api/v1/categories/1/products')
             .then((res) => {
                 // console.log(res.data);
-                setClothes(res.data)
+                setData(res.data)
             }).catch((err) => {
                 console.log(err);
             })
@@ -19,10 +19,10 @@ const Clothes = () => {
 
     return (
         <>
-            {clothes.length > 0 ? (
+            {data.length > 0 ? (
                 <div className='flex  justify-evenly flex-wrap gap-[10px]  bg-[#fff]'>
-                    {clothes.map((item, index) => (
-                        <Card key={index} title={item.title} image={item.images} description={item.description} price={item.price} index={index} />
+                    {data.map((item, index) => (
+                        <Card key={index} title={item.title} image={item.images} description={`${item.description.slice(0, 50)}....`} price={item.price} index={index} data={data} />
                     ))}
                 </div>
             ) : (
