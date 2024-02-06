@@ -1,14 +1,24 @@
 import React from 'react'
 import Swal from 'sweetalert2'
-
+import { collection, addDoc } from "firebase/firestore";
+import { db } from '../../config/firebase/firebaseConfig';
 
 
 const Card = ({ image, title, description, price, index, data }) => {
 
 
-    function addToCart() {
+     async function addToCart() {
 
         console.log('Item Add To Cart', data[index]);
+        try {
+            const docRef = await addDoc(collection(db, "cart"), {
+              items:data[index]
+            });
+            console.log("Document written with ID: ", docRef.id);
+          } catch (e) {
+            console.error("Error adding document: ", e);
+          }
+
         const Toast = Swal.mixin({
             toast: true,
             position: "bottom-right",

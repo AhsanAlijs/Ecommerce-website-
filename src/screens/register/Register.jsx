@@ -8,7 +8,8 @@ import {
 } from "@material-tailwind/react";
 import { useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from '../../config/firebase/firebaseConfig';
+import { auth, db } from '../../config/firebase/firebaseConfig';
+import { collection, addDoc } from "firebase/firestore";
 
 const Register = () => {
 
@@ -32,14 +33,21 @@ const Register = () => {
 
       chack === true
         ? (
-          createUserWithEmailAndPassword(auth , email.current.value, password.current.value)
-            .then((userCredential) => {
+          createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
+            .then(async (userCredential) => {
               const user = userCredential.user;
-              console.log(names.current.value),
-                console.log(email.current.value),
-                console.log(password.current.value)
-                console.log(user);
-                navigate('/login')
+              try {
+                const docRef = await addDoc(collection(db, "users"), {
+                  name: names.current.value,
+                  email: email.current.value,
+                  uid: user.uid
+                });
+                console.log("Document written with ID: ", docRef.id);
+              } catch (e) {
+                console.error("Error adding document: ", e);
+              }
+              console.log(user.uid);
+              navigate('/login')
             })
             .catch((error) => {
               const errorCode = error.code;
@@ -123,7 +131,7 @@ const Register = () => {
           <Button className="mt-6" fullWidth type='submit'>
             sign up
           </Button>
-          <Typography color="gray" className="mt-4 text-center font-normal">
+          <Typography color="gray" className="mt-4 text-center cursor-pointer font-normal">
             Already have an account?{" "}
             <a onClick={navigates} className="font-medium text-gray-900">
               Sign In
