@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Swal from "sweetalert2";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../config/firebase/firebaseConfig";
 
 const Card = ({ image, title, description, price, index, data }) => {
+  const [quentity, setQuentity] = useState(0);
+  const [cartData, setCartData] = useState()
   async function addToCart() {
     console.log("Item Add To Cart", data[index]);
     try {
@@ -46,6 +48,7 @@ const Card = ({ image, title, description, price, index, data }) => {
             <button onClick={addToCart} className="btn btn-primary">
               Add to cart
             </button>
+            
           </div>
         </div>
       </div>

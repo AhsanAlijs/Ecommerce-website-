@@ -26,17 +26,21 @@ const Cart = () => {
     getDataFromFirestore();
   }, []);
 
+
+
   return (
     <div className="flex items-center justify-evenly">
       {data.length > 0 ? (
         data.map((item, index) => {
           return (
-            <Card
-              key={index} // Adding a key prop to each mapped item is recommended when using lists in React
-              title={item.items.title}
-              image={item.items.images}
-              price={item.items.price}
-            />
+            <>
+              <Card
+                key={index} // Adding a key prop to each mapped item is recommended when using lists in React
+                title={item.items.title}
+                image={item.items.images}
+                price={item.items.price}
+              />
+            </>
           );
         })
       ) : (
